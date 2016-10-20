@@ -18,3 +18,15 @@ def getMealStatus(mealsPerWeek, currentDate):
           " That leaves %.2f meals left over the next %d days."
           % (mealsPerWeek-mealsEaten, 7-weekdayNum));
     return;
+
+def getDiningStatus(diningPoints, currentDate, startDate, endDate):
+    semesterLength = endDate - startDate;
+    semesterElapsed = endDate - currentDate;
+    print(endDate);
+    print(currentDate);
+    pointsUsed = (diningPoints/semesterLength.days) * semesterElapsed.days;
+    print("There are a total of " + str(semesterLength.days) + " days in the current semester");
+    print("You should have used " + str(pointsUsed) + " dollars so far.");
+    # TODO: More float formatting
+    # TODO: Give a user more relative information about stuff (like in the meal status fn)
+    return;
