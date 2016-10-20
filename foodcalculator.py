@@ -1,17 +1,21 @@
 import datetime;
-WEEKDAY_DICT = {"Saturday": 0,
-                "Sunday": 1,
-                "Monday": 2,
-                "Tuesday": 3,
-                "Wednesday": 4,
-                "Thursday": 5,
-                "Friday": 6};
-# This dictionary is indexed from Saturday because Friday is the day that
-# meal swipes are reset. This way, getting distance to Friday is easier.
+
+# What the values of weekdayNum represent:
+# "Friday": 1,
+# "Saturday": 2,
+# "Sunday": 3,
+# "Monday": 4,
+# "Tuesday": 5,
+# "Wednesday": 6,
+# "Thursday": 7};
+#
+# I am indexing them this way because meals are reset on Friday
 
 def getMealStatus(mealsPerWeek, currentDate):
-    print((currentDate.weekday() + 2) % 7);
-    # This should print the weekday as if the week began on Saturday
-    # The reason I want that is so that Friday is the last day of the week,
-    # which is the day the meal plan is reset.
-    return mealsPerWeek;
+    weekdayNum = (currentDate.weekday() + 4) % 7;
+    mealsEaten = (mealsPerWeek/7) * weekdayNum;
+    print("At this point, you should have eaten about " + str(mealsEaten) +\
+          " meals so far. That leaves " + str(mealsPerWeek-mealsEaten) +\
+          " meals left over the next " + str(7-weekdayNum) + " day(s).");
+    # TODO: Clean up the ugly float numbers
+    return mealsEaten;

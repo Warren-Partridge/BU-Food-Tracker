@@ -22,4 +22,4 @@ print("The current date is " + currentDate.strftime("%m/%d/%Y") + ", which is a 
 # if date is between Sept 6 - Dec 12, it's fall semester
 # if date is between Jan 19 - May 12, it's spring semester
 
-print(getMealStatus(9, currentDate)); # Testing for the 9-Plus plan
+getMealStatus(9, currentDate); # Testing for the 9-Plus plan
