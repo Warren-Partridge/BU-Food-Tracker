@@ -12,10 +12,9 @@ import datetime;
 # I am indexing them this way because meals are reset on Friday
 
 def getMealStatus(mealsPerWeek, currentDate):
-    weekdayNum = (currentDate.weekday() + 4) % 7;
+    weekdayNum = (currentDate.weekday() + 3) % 7;
     mealsEaten = (mealsPerWeek/7) * weekdayNum;
-    print("At this point, you should have eaten about " + str(mealsEaten) +\
-          " meals so far. That leaves " + str(mealsPerWeek-mealsEaten) +\
-          " meals left over the next " + str(7-weekdayNum) + " day(s).");
-    # TODO: Clean up the ugly float numbers
-    return mealsEaten;
+    print("At this point, you should have eaten about %.2f meals." % mealsEaten +\
+          " That leaves %.2f meals left over the next %d days."
+          % (mealsPerWeek-mealsEaten, 7-weekdayNum));
+    return;
