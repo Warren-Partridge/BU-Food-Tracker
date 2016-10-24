@@ -13,20 +13,22 @@ import datetime;
 
 def getMealStatus(mealsPerWeek, currentDate):
     weekdayNum = (currentDate.weekday() + 3) % 7;
-    mealsEaten = (mealsPerWeek/7) * weekdayNum;
-    print("At this point, you should have eaten about %.2f meals." % mealsEaten +\
-          " That leaves %.2f meals left over the next %d days."
-          % (mealsPerWeek-mealsEaten, 7-weekdayNum));
-    return;
+    mealRate = mealsPerWeek/7;
+    mealsEaten = mealRate * weekdayNum;
+    print("You should be eating about %.1f meals per day. At this point in the week (assuming you ate today), you should have eaten about %.1f meals."
+          % (mealRate, mealsEaten) +\
+          " That leaves %.1f meals left over the next %d days, until they are reset to %d on Friday morning."
+          % (mealsPerWeek-mealsEaten, 7-weekdayNum, mealsPerWeek));
+    return None;
 
 def getDiningStatus(diningPoints, currentDate, startDate, endDate):
     semesterLength = endDate - startDate;
     semesterElapsed = endDate - currentDate;
-    print(endDate);
-    print(currentDate);
-    pointsUsed = (diningPoints/semesterLength.days) * semesterElapsed.days;
-    print("There are a total of " + str(semesterLength.days) + " days in the current semester");
-    print("You should have used " + str(pointsUsed) + " dollars so far.");
-    # TODO: More float formatting
-    # TODO: Give a user more relative information about stuff (like in the meal status fn)
-    return;
+    pointsRate = diningPoints/semesterLength.days;
+    pointsUsed = pointsRate * semesterElapsed.days;
+    
+    print("At this point in the semester, you should have spent $%.2f dining dollars."
+          % pointsUsed +\
+          " That leaves $%.2f to spend over the next %d days. Statistically, you should use $%.2f per day."
+          % (diningPoints-pointsUsed, semesterLength.days-semesterElapsed.days, pointsRate));
+    return None;

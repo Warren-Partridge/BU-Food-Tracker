@@ -11,6 +11,8 @@ userPlan = "";
 currentDate = datetime.datetime.now();
 fallSemesterStart = datetime.datetime(2016, 9, 6);
 fallSemesterEnd = datetime.datetime(2016, 12, 12);
+semesterLength = fallSemesterEnd - fallSemesterStart;
+semesterElapsed = fallSemesterEnd - currentDate;
 
 userPlan = input("Type a number 1-5: ");
 print(userPlan);
@@ -19,9 +21,11 @@ print(userPlan);
 print("The 9-Plus Plan has 9 meals per week and 415 dining dollars per semester.");
 print("The current date is " + currentDate.strftime("%m/%d/%Y") + ", which is a " +\
       weekdayArray[currentDate.weekday()] + ".");
+print("There are a total of %d days in the current semester. Today is day %d.\n"
+      % (semesterLength.days, semesterElapsed.days));
 # if date is between Sept 6 - Dec 12, it's fall semester
 # if date is between Jan 19 - May 12, it's spring semester
 # TODO: Figure out how to get semester dates
 
 getMealStatus(9, currentDate); # Testing for the 9-Plus plan
-getDiningStatus(1000, currentDate, fallSemesterStart, fallSemesterEnd);
+getDiningStatus(415, currentDate, fallSemesterStart, fallSemesterEnd);
