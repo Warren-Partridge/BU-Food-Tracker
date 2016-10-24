@@ -11,7 +11,7 @@ import datetime;
 #
 # I am indexing them this way because meals are reset on Friday
 
-def getMealStatus(mealsPerWeek, currentDate):
+def getWeeklyMealStatus(mealsPerWeek, currentDate):
     weekdayNum = (currentDate.weekday() + 3) % 7;
     mealRate = mealsPerWeek/7;
     mealsEaten = mealRate * weekdayNum;
@@ -19,6 +19,18 @@ def getMealStatus(mealsPerWeek, currentDate):
           % (mealRate, mealsEaten) +\
           " That leaves %.1f meals left over the next %d days, until they are reset to %d on Friday morning."
           % (mealsPerWeek-mealsEaten, 7-weekdayNum, mealsPerWeek));
+    return None;
+
+def getStandardMealStatus(mealsPerSemester, currentDate, startDate, endDate):
+    semesterLength = endDate - startDate;
+    semesterElapsed = endDate - currentDate;
+    mealRate = mealsPerSemester/semesterLength.days;
+    mealsEaten = mealRate * semesterElapsed.days;
+    
+    print("At this point in the semester (assuming you ate today), you should have eaten %.1f meals so far."
+          % mealsEaten +\
+          " That leaves %.1f to spend over the next %d days. Statistically, you should eat %.1f per day."
+          % (mealsPerSemester-mealsEaten, semesterLength.days-semesterElapsed.days, mealRate));
     return None;
 
 def getDiningStatus(diningPoints, currentDate, startDate, endDate):

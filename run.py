@@ -27,5 +27,8 @@ print("There are a total of %d days in the current semester. Today is day %d.\n"
 # if date is between Jan 19 - May 12, it's spring semester
 # TODO: Figure out how to get semester dates
 
-getMealStatus(9, currentDate); # Testing for the 9-Plus plan
+getWeeklyMealStatus(9, currentDate); # Testing for the 9-Plus plan
 getDiningStatus(415, currentDate, fallSemesterStart, fallSemesterEnd);
+
+print("TESTING");
+getStandardMealStatus(400, currentDate, fallSemesterStart, fallSemesterEnd);
