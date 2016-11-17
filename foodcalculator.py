@@ -23,7 +23,7 @@ def getWeeklyMealStatus(mealsPerWeek, currentDate):
 
 def getStandardMealStatus(mealsPerSemester, currentDate, startDate, endDate):
     semesterLength = endDate - startDate;
-    semesterElapsed = endDate - currentDate;
+    semesterElapsed = currentDate - startDate;
     mealRate = mealsPerSemester/semesterLength.days;
     mealsEaten = mealRate * semesterElapsed.days;
     
@@ -35,7 +35,7 @@ def getStandardMealStatus(mealsPerSemester, currentDate, startDate, endDate):
 
 def getDiningStatus(diningPoints, currentDate, startDate, endDate):
     semesterLength = endDate - startDate;
-    semesterElapsed = endDate - currentDate;
+    semesterElapsed = currentDate - startDate;
     pointsRate = diningPoints/semesterLength.days;
     pointsUsed = pointsRate * semesterElapsed.days;
     

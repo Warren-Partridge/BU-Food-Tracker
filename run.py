@@ -8,7 +8,7 @@ currentDate = datetime.datetime.now();
 fallSemesterStart = datetime.datetime(2016, 9, 6);
 fallSemesterEnd = datetime.datetime(2016, 12, 12);
 semesterLength = fallSemesterEnd - fallSemesterStart;
-semesterElapsed = fallSemesterEnd - currentDate;
+semesterElapsed = currentDate - fallSemesterStart;
 
 print("The current date is " + currentDate.strftime("%m/%d/%Y") + ", which is a " +\
       weekdayArray[currentDate.weekday()] + ".");
