@@ -5,8 +5,8 @@ weekdayArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturda
 
 userPlan = " ";
 currentDate = datetime.datetime.now();
-fallSemesterStart = datetime.datetime(2016, 9, 6);
-fallSemesterEnd = datetime.datetime(2016, 12, 12);
+fallSemesterStart = datetime.datetime(2017, 1, 13);
+fallSemesterEnd = datetime.datetime(2017, 5, 12);
 semesterLength = fallSemesterEnd - fallSemesterStart;
 semesterElapsed = currentDate - fallSemesterStart;
 
@@ -15,7 +15,7 @@ print("The current date is " + currentDate.strftime("%m/%d/%Y") + ", which is a 
 print("There are a total of %d days in the current semester. Today is day %d.\n"
       % (semesterLength.days, semesterElapsed.days));
 # if date is between Sept 6 - Dec 12, it's fall semester
-# if date is between Jan 19 - May 12, it's spring semester
+# if date is between Jan 13 - May 12, it's spring semester
 # But since I can't scrape semester dates from BU website,
 # they'll have to be magic dates
 
