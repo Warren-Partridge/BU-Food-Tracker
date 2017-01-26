@@ -30,23 +30,23 @@ while userPlan not in "123456":
         print("");
         getDiningStatus(195, currentDate, fallSemesterStart, fallSemesterEnd);
     elif userPlan == "2":
-        print("\nThe 14-Plus Plan has 14 meals per week and $250 dining dollars per semester.\n");
+        print("\nThe 14-Plus Plan has 14 meals per week and $245 dining dollars per semester.\n");
         getWeeklyMealStatus(14, currentDate);
         print("");
-        getDiningStatus(250, currentDate, fallSemesterStart, fallSemesterEnd);
+        getDiningStatus(245, currentDate, fallSemesterStart, fallSemesterEnd);
     elif userPlan == "3":
         print("\nThe 9-Plus Plan has 9 meals per week and $415 dining dollars per semester.\n");
         getWeeklyMealStatus(9, currentDate);
         print("");
         getDiningStatus(415, currentDate, fallSemesterStart, fallSemesterEnd);
     elif userPlan == "4":
-        print("\nThe 330 Plan has 330 meals per semester and $305 dining dollars per semester.\n");
-        getStandardMealStatus(330, currentDate, fallSemesterStart, fallSemesterEnd);
+        print("\nThe 330 Plan has 165 meals per semester and $305 dining dollars per semester.\n");
+        getStandardMealStatus(165, currentDate, fallSemesterStart, fallSemesterEnd);
         print("");
         getDiningStatus(305, currentDate, fallSemesterStart, fallSemesterEnd);
     elif userPlan == "5":
-        print("\nThe 250 Plan has 250 meals per semester and $575 dining dollars per semester.\n");
-        getStandardMealStatus(250, currentDate, fallSemesterStart, fallSemesterEnd);
+        print("\nThe 250 Plan has 125 meals per semester and $575 dining dollars per semester.\n");
+        getStandardMealStatus(125, currentDate, fallSemesterStart, fallSemesterEnd);
         print("");
         getDiningStatus(575, currentDate, fallSemesterStart, fallSemesterEnd);
     elif userPlan == "6":
